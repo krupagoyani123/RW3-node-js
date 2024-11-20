@@ -1,15 +1,16 @@
-    const mongoose = require ('mongoose');
+const mongoose=require('mongoose')
 
-mongoose.connect('mongodb://localhost/connection');
+mongoose.connect('mongodb://localhost/movies')
 
-const db = mongoose.connection;
+const database=mongoose.connection
 
-db.on('connected' , (err) =>{
-    if(err){
+database.on('connected',(err)=>{
+    if (err) {
         console.log(err);
-        return false;
+        
     }
-    console.log("db is connected");  
-});
+    console.log("db is connected");
+    
+})
 
-module.exports = db;zz
+module.export=database
