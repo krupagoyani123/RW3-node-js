@@ -15,18 +15,20 @@
     <style>
         body {
             background-color: #f8f9fa;
-            font-family: "Arial", sans-serif;
+            font-family: "Poppins", sans-serif;
         }
 
         .header-area {
-            background: #295684;
+            background: linear-gradient(135deg, #295684, #1e4370);
             padding: 20px 0;
             color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-area h2 {
             margin: 0;
-            font-size: 24px;
+            font-size: 1.8rem;
+            font-weight: bold;
         }
 
         .header-btn {
@@ -36,19 +38,27 @@
             border-radius: 25px;
             font-weight: bold;
             text-transform: uppercase;
+            transition: all 0.3s ease;
         }
 
         .header-btn:hover {
             background-color: #e0a800;
             color: #fff;
+            box-shadow: 0 4px 8px rgba(224, 168, 0, 0.5);
         }
 
         .blog-item {
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
             overflow: hidden;
             margin-bottom: 30px;
-            background: #fff;
+            background: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .blog-item img {
@@ -62,18 +72,21 @@
         }
 
         .blog-content h3 {
-            font-size: 20px;
+            font-size: 1.5rem;
             color: #295684;
+            font-weight: bold;
         }
 
         .blog-content p {
             color: #666;
-            margin-bottom: 15px;
+            margin: 15px 0;
         }
 
         .blog-content .btn {
             border-radius: 25px;
             font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
 
         .btn-edit {
@@ -83,6 +96,7 @@
 
         .btn-edit:hover {
             background-color: #138496;
+            box-shadow: 0 4px 8px rgba(23, 162, 184, 0.5);
         }
 
         .btn-delete {
@@ -92,6 +106,18 @@
 
         .btn-delete:hover {
             background-color: #c82333;
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.5);
+        }
+
+        .footer {
+            background: #f1f1f1;
+            color: #666;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -131,7 +157,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-3 bg-light">
+    <footer class="footer text-center">
         <p>&copy; 2024 Business Brokerage. All Rights Reserved.</p>
     </footer>
 

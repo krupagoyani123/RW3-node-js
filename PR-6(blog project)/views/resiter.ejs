@@ -11,42 +11,63 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background-color: #f4f6f9;
-            font-family: "Open Sans", sans-serif;
+            background: linear-gradient(135deg, #295684, #1e4370);
+            font-family: "Poppins", sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
         .signup-container {
-            max-width: 400px;
-            margin: 100px auto;
+            width: 100%;
+            max-width: 420px;
             padding: 30px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .signup-container h3 {
             font-weight: bold;
-            color: #333;
-            text-align: center;
+            color: #295684;
+            font-size: 1.8rem;
             margin-bottom: 20px;
         }
 
         .form-control {
-            border-radius: 8px;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
         }
 
         .btn-primary {
             background-color: #295684;
             border-color: #295684;
+            border-radius: 10px;
+            padding: 10px 0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
             background-color: #1e4370;
-            border-color: #1e4370;
+            box-shadow: 0px 4px 12px rgba(30, 67, 112, 0.5);
+        }
+
+        .form-icon {
+            font-size: 3rem;
+            color: #1e4370;
+            margin-bottom: 20px;
         }
 
         .text-center a {
             color: #295684;
+            font-weight: 500;
             text-decoration: none;
         }
 
@@ -58,34 +79,58 @@
             text-align: center;
             margin-top: 20px;
             color: #888;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="signup-container">
-        <h3>Sign Up</h3>
+        <i class="fas fa-user-plus form-icon"></i>
+        <h3>Create Your Account</h3>
+        <p class="text-muted">Join us and explore endless possibilities.</p>
         <form action="/insert" method="post">
-            <div class="mb-3">
-                <label for="name" class="form-label">Username</label>
+            <!-- Username Field -->
+            <div class="mb-4">
+                <label for="name" class="form-label visually-hidden">Username</label>
                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter your username" required>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+
+            <!-- Email Field -->
+            <div class="mb-4">
+                <label for="email" class="form-label visually-hidden">Email</label>
                 <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+
+            <!-- Password Field -->
+            <div class="mb-4">
+                <label for="password" class="form-label visually-hidden">Password</label>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
-                <p class="mt-3">Already have an account? <a href="/">Login</a></p>
-            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+
+            <!-- Login Link -->
+            <p class="mt-4">
+                Already have an account? <a href="/">Login</a>
+            </p>
         </form>
     </div>
+
     <div class="copyright">
-        &copy; 2024 All Rights Reserved.
+        &copy; 2024 All Rights Reserved. Powered by <strong>Your Company</strong>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

@@ -14,20 +14,29 @@
         }
 
         .hero-section {
-            background: url('assets/frontend/img/hero/Industries_hero.jpg') no-repeat center center / cover;
-            height: 200px;
+            background: linear-gradient(to right, rgba(41, 86, 132, 0.8), rgba(30, 67, 112, 0.8)), 
+            url('assets/frontend/img/hero/Industries_hero.jpg') no-repeat center center / cover;
+            height: 250px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .form-container {
             background: #ffffff;
             border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
             padding: 30px;
-            margin-top: -80px;
+            margin-top: -100px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .form-container .form-control {
@@ -41,21 +50,46 @@
         .btn-primary {
             background-color: #295684;
             border-color: #295684;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
             background-color: #1e4370;
             border-color: #1e4370;
+            box-shadow: 0 4px 10px rgba(30, 67, 112, 0.5);
         }
 
         .form-container img {
             max-width: 100%;
             border-radius: 8px;
-            margin-top: 10px;
+            margin-top: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .submit-btn {
             text-align: center;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -70,24 +104,35 @@
     <div class="container">
         <div class="form-container mx-auto">
             <form action="/up" method="post" enctype="multipart/form-data">
+                <!-- Hidden Field for ID -->
                 <input type="hidden" name="editid" value="<%= single.id %>">
-                <div class="mb-3">
+
+                <!-- Title Input -->
+                <div class="mb-4">
                     <label for="title" class="form-label">Blog Title</label>
                     <input type="text" id="title" name="title" value="<%= single.title %>" class="form-control"
                         placeholder="Enter the blog title">
                 </div>
-                <div class="mb-3">
+
+                <!-- Description Input -->
+                <div class="mb-4">
                     <label for="description" class="form-label">Blog Description</label>
-                    <textarea id="description" name="desc" rows="4" class="form-control"
+                    <textarea id="description" name="desc" rows="5" class="form-control"
                         placeholder="Write a brief description"><%= single.desc %></textarea>
                 </div>
-                <div class="mb-3">
+
+                <!-- Image Upload -->
+                <div class="mb-4">
                     <label for="image" class="form-label">Blog Image</label>
                     <input type="file" id="image" name="image" class="form-control">
                     <img src="<%= single.image %>" alt="Current blog image">
                 </div>
+
+                <!-- Submit Button -->
                 <div class="submit-btn">
-                    <button type="submit" class="btn btn-primary w-100">Update Blog</button>
+                    <button type="submit" class="btn btn-primary w-100 py-2">
+                        <i class="fas fa-save"></i> Update Blog
+                    </button>
                 </div>
             </form>
         </div>

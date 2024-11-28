@@ -9,76 +9,117 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background-color: #f4f6f9;
-            font-family: "Open Sans", sans-serif;
+            background: linear-gradient(135deg, #295684, #1e4370);
+            font-family: "Poppins", sans-serif;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .login-container {
             max-width: 400px;
-            margin: 100px auto;
             padding: 30px;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .login-container h3 {
             font-weight: bold;
+            color: #295684;
             margin-bottom: 20px;
-            color: #333;
-            text-align: center;
+            font-size: 1.8rem;
         }
 
         .form-control {
-            border-radius: 8px;
+            border-radius: 10px;
+            font-size: 1rem;
         }
 
         .btn-primary {
             background-color: #295684;
             border-color: #295684;
+            border-radius: 10px;
+            padding: 10px 0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
             background-color: #1e4370;
-            border-color: #1e4370;
+            box-shadow: 0px 4px 12px rgba(30, 67, 112, 0.5);
         }
 
         .text-center a {
             color: #295684;
+            font-weight: 500;
+            text-decoration: none;
         }
 
         .text-center a:hover {
             text-decoration: underline;
         }
 
+        .form-icon {
+            font-size: 3rem;
+            color: #1e4370;
+            margin-bottom: 15px;
+        }
+
         .copyright {
-            text-align: center;
             margin-top: 20px;
-            color: #888;
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="login-container">
-        <h3>Login</h3>
+        <i class="fas fa-user-circle form-icon"></i>
+        <h3>Welcome Back</h3>
+        <p class="text-muted">Please log in to your account</p>
         <form action="/login" method="post">
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+            <!-- Email Input -->
+            <div class="mb-4">
+                <label for="email" class="form-label visually-hidden">Email</label>
                 <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+
+            <!-- Password Input -->
+            <div class="mb-4">
+                <label for="password" class="form-label visually-hidden">Password</label>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-                <p class="mt-3">Don't have an account? <a href="/register">Sign Up</a></p>
-            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+
+            <!-- Signup Link -->
+            <p class="mt-4">
+                Don't have an account? <a href="/register">Sign Up</a>
+            </p>
         </form>
     </div>
+
     <div class="copyright">
-        &copy; 2024 All Rights Reserved.
+        &copy; 2024 All Rights Reserved. Powered by <strong>Your Company</strong>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
