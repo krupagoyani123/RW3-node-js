@@ -29,7 +29,7 @@ routes.post('/addblog',upload,addblogusers)
 routes.get('/viewblog',passport.checkUser,viewblog); 
 routes.get('/delete',deleterecord); 
 routes.get('/edit',editrecord); 
-routes.post('/up',upload,upblog)
+routes.post('/upblog',upload,upblog)
 routes.get('/logout', logout)
 
 module.exports = routes;

@@ -6,7 +6,7 @@ const resiterpage = (req, res) => {
 
 }
 const loginpage = (req, res) => {
-    if(req.cookies.auth){
+    if(req.cookies['auth']){
         return res.redirect('/addblogpage')
     }
     return res.render('login')
@@ -58,18 +58,10 @@ console.log(user);
 
     }
 }
-
-const addblogpage=async(req,res)=>{
-
-    
+const addblogpage=async(req,res)=>{   
     return res.render('addblog',)
-
-
-
 }
-
 const addblogusers= async (req, res)=>{
-
 try {
     const {title,desc}=req.body    
 await blogmodels.create({
@@ -81,8 +73,7 @@ await blogmodels.create({
 
 } catch (error) {
     console.log(error);
-    return false
-    
+    return false   
 }
 }
 
