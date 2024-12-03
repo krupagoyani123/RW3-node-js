@@ -7,19 +7,15 @@ const resiterpage = (req, res) => {
 }
 const loginpage = (req, res) => {
     if(req.cookies['auth']){
+
         return res.redirect('/addblogpage')
+
+        return res.redirect('/viewblog');
+
     }
     return res.render('login')
 }
-// const dashbord = async (req, res) => {
 
-//     try {
-        
-//     } catch (error) {
-        
-//     }
-//     return res.render('dash')
-// }
 const Resiterusers = async (req, res) => {
     try {
         const { name, email, password } = req.body;
@@ -168,12 +164,16 @@ const upblog= async (req, res)=>{
     
 }
 
+const logout=(req, res)=>{
+    return res.clearCookie('auth').redirect('/');
+}
+
 
 module.exports = {
     resiterpage,
     loginpage,
     Resiterusers,
     loginuseres,
-    addblogpage,addblogusers,viewblog,deleterecord,editrecord,upblog
+    addblogpage,addblogusers,viewblog,deleterecord,editrecord,upblog,logout
 
 }
