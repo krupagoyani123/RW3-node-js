@@ -18,7 +18,7 @@ const passport = require('passport');
 const passportLocal = require('./config/passportLocal');
 const session = require('express-session');
 app.use(session({
-    secret:'rnwadmin',
+    secret:'krupa',
     resave : true,
     saveUninitialized:true,
     cookie:{

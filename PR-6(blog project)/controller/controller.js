@@ -6,16 +6,20 @@ const resiterpage = (req, res) => {
 
 }
 const loginpage = (req, res) => {
-    if(req.cookies['auth']){
-
+    if(req.cookies.auth){
         return res.redirect('/addblogpage')
-
-        return res.redirect('/viewblog');
-
     }
     return res.render('login')
 }
+// const dashbord = async (req, res) => {
 
+//     try {
+        
+//     } catch (error) {
+        
+//     }
+//     return res.render('dash')
+// }
 const Resiterusers = async (req, res) => {
     try {
         const { name, email, password } = req.body;
@@ -54,10 +58,18 @@ console.log(user);
 
     }
 }
-const addblogpage=async(req,res)=>{   
+
+const addblogpage=async(req,res)=>{
+
+    
     return res.render('addblog',)
+
+
+
 }
+
 const addblogusers= async (req, res)=>{
+
 try {
     const {title,desc}=req.body    
 await blogmodels.create({
@@ -69,7 +81,8 @@ await blogmodels.create({
 
 } catch (error) {
     console.log(error);
-    return false   
+    return false
+    
 }
 }
 
@@ -164,16 +177,12 @@ const upblog= async (req, res)=>{
     
 }
 
-const logout=(req, res)=>{
-    return res.clearCookie('auth').redirect('/');
-}
-
 
 module.exports = {
     resiterpage,
     loginpage,
     Resiterusers,
     loginuseres,
-    addblogpage,addblogusers,viewblog,deleterecord,editrecord,upblog,logout
+    addblogpage,addblogusers,viewblog,deleterecord,editrecord,upblog
 
 }
