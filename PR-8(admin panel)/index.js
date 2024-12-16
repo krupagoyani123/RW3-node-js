@@ -10,6 +10,8 @@ const path = require('path');
 
 const db = require('./config/db');
 
+app.use("/uploads",express.static(path.join(__dirname,"uploads")))
+
 const flash = require('connect-flash');
 
 const cookieParser = require('cookie-parser');
@@ -20,7 +22,7 @@ const passport = require('passport');
 const passportLocal = require('./config/passportLocal');
 const session = require('express-session');
 app.use(session({
-    secret:'krishn',
+    secret:'radhey',
     resave : true,
     saveUninitialized:true,
     cookie:{
