@@ -30,8 +30,7 @@
             <!-- ============================================================== -->
             <!-- Start Page Content -->
             <!-- ============================================================== -->
-                <div class="alert alert-success alert-dismissible fade show" role="alert"                       
-                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert alert-success alert-dismissible fade show" role="alert"                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                     <div class="row">
                         <div class="col-12">
@@ -66,7 +65,7 @@
                                                     <%= ++i %>
                                                 </th>
                                                 <td>
-                                                    <%= cat?.category_name %>
+                                                    <%= cat.category_name %>
                                                 </td>
                                                 <td>
                                                     <a href=" /category/deleteCategory?id=<%=cat.id %>"
@@ -79,7 +78,7 @@
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <% if (cat?.status == "active") {%>
+                                                    <% if (cat.status == "active") {%>
                                                         <a href="/category/changestatus?id=<%= cat.id %>&status=<%= cat.status %>" class="btn btn-success"><%= cat.status %></a>
                                                    <% } else { %>
                                                     <a href="/category/changestatus?id=<%= cat.id %>&status=<%= cat.status %>" class="btn btn-warning text-dark"><%= cat.status %></a>
